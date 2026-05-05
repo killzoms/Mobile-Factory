@@ -140,7 +140,7 @@ end
 
 -- Destructor --
 function MF:remove()
-    MF:repack(self)
+    self:repack()
     self.ent = nil
     -- self:removeSyncArea()
 end
@@ -1518,6 +1518,10 @@ function MF:deploy()
                 orWC.connect_to(irWC, false)
                 ogWC.connect_to(igWC, false)
             end
+
+            if string.match(slot.entity, "Pipe") then
+                inEnt.fluidbox.add_linked_connection(1, outEnt, 1)
+            end
         end
     end
     self.deployed = true
@@ -1526,9 +1530,6 @@ end
 -- Repack the Mobile Factory --
 function MF:repack()
     -- Remove all Entities --
-    if self.deployedEnts == nil then
-        return
-    end
     for _, dEnt in pairs(self.deployedEnts) do
         if dEnt.inEntity ~= nil and dEnt.inEntity.valid == true then
             dEnt.inEntity.destroy()

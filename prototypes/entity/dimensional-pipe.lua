@@ -46,7 +46,7 @@ dpE1.icons = {{icon=dpE1.icon, tint=tint1}}
 dpE1.minable = {mining_time = 0.5}
 dpE1.flags = {}
 dpE1.fast_replaceable_group = nil
-dpE1.fluid_box.pipe_connections[2].max_underground_distance = 1
+dpE1.fluid_box.pipe_connections[2] = {connection_type = "linked", linked_connection_id = 1}
 tintPipeCovers(dpE1.fluid_box.pipe_covers, tint1)
 tintPictures(dpE1.pictures, tint1)
 data:extend{dpE1}
@@ -56,7 +56,6 @@ local tint2 = {1,0.4,0.4}
 local dpE2 = table.deepcopy(dpE1)
 dpE2.name = "DimensionalPipe2"
 dpE2.icons = {{icon=dpE1.icon, tint=tint2}}
-dpE2.fluid_box.base_area = 10
 tintPipeCovers(dpE2.fluid_box.pipe_covers, tint2)
 tintPictures(dpE2.pictures, tint2)
 data:extend{dpE2}
