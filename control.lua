@@ -98,7 +98,7 @@ function onInit()
 	createProductsList()
 
 	-- Remove Existing Render Objects --
-	rendering.clear("Mobile_Factory")
+	rendering.clear("Mobile_Factory_zoms")
 
 	-- Create all MFPlayers if needed --
 	if storage.playersTable == nil then storage.playersTable = {} end

@@ -310,7 +310,7 @@ function Event.clearGUI(event)
 
 	-- Clean all Mobile Factory GUI --
 	for _, gui in pairs(player.gui.screen.children) do
-		if gui ~= nil and gui.valid == true and gui.get_mod() == "Mobile_Factory" and gui.name ~= "MFBaseErrorWindows" then
+		if gui ~= nil and gui.valid == true and gui.get_mod() == "Mobile_Factory_zoms" and gui.name ~= "MFBaseErrorWindows" then
 			gui.destroy()
 		end
 	end
