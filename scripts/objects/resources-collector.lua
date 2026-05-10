@@ -56,7 +56,7 @@ end
 function RCL.remove(obj)
 	-- Destroy the Animation --
 	if (obj.lightAn) then
-		rendering.destroy(obj.lightAn)
+		obj.lightAn.destroy()
 	end
 	-- Destroy the Tank --
 	if obj.tank ~= nil and obj.tank.valid == true then obj.tank.destroy() end
@@ -113,7 +113,7 @@ end
 function RCL.blueprintTagsToSettings(obj, tags)
 	obj.selectedInv = tags["SelectedInv"]
 	if obj.selectedInv == -3 then obj.selectedInv = nil end
-	if obj.selectedInv > 0 then
+	if obj.selectedInv ~= nil and obj.selectedInv > 0 then
 		for _, deepStorage in pairs(obj.dataNetwork.DSRTable) do
 			if valid(deepStorage) == true then
 				if obj.selectedInv == deepStorage.ID then
@@ -481,7 +481,7 @@ function RCL.update(obj)
     -- Draw the Animation --
 	if obj.inventoryFull == true or obj.outOfQuatron == true then
 		if (obj.lightAn) then
-			rendering.destroy(obj.lightAn)
+			obj.lightAn.destroy()
 			obj.lightAn = nil
 		end
     elseif obj.lightAn == nil or obj.lightAn.valid == false then
@@ -587,7 +587,7 @@ function RCL.collectResources(obj)
 				-- Register the amount inserted if this is the main Product --
 				added = math.max(inserted, added)
 				-- Create the Projectile --
-				obj.ent.surface.create_entity{name="RCLProjectile:" .. product.name, position=resourcesPath.position, target=obj.ent, speed=0.1, max_range=999, force=obj.ent.force}
+				obj.ent.surface.create_entity{name="RCLProjectile-" .. product.name, position=resourcesPath.position, target=obj.ent, speed=0.1, max_range=999, force=obj.ent.force}
 				obj.inventoryFull = false
 			else
 				obj.inventoryFull = true
@@ -951,7 +951,7 @@ end
 function RCL.createOreBeam(obj, itemName, target)
 	local positionX = obj.ent.position.x + (math.random(-200, 200)/100)
 	local positionY = obj.ent.position.y + (math.random(-200, 200)/100)
-	obj.ent.surface.create_entity{name="RCLProjectile:" .. itemName, position={positionX,positionY}, target=target, speed=0.25, max_range=999, force=obj.ent.force}
+	obj.ent.surface.create_entity{name="RCLProjectile-" .. itemName, position={positionX,positionY}, target=target, speed=0.25, max_range=999, force=obj.ent.force}
 end
 
 -- Add Quatron (Return the amount added) --

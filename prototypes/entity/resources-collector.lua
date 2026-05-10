@@ -158,6 +158,5 @@ rcAn.size = 600
 rcAn.line_length = 10
 rcAn.animation_speed = 1
 rcAn.scale = 1/600*33*6
-rcAn.flags = {"terrain"}
 rcAn.draw_as_glow = true
 data:extend{rcAn}
