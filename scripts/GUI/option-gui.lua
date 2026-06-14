@@ -84,6 +84,7 @@ end
 -- Update the MFTab --
 function GUI.updateOptionGUIMFTab(GUITable)
 
+	log("A");
 	-- Get the Variables --
 	local playerIndex = GUITable.MFPlayer.index
 	local flow = GUITable.vars.MFTabFlow
@@ -94,8 +95,9 @@ function GUI.updateOptionGUIMFTab(GUITable)
 	-- Create the Players List --
 	local playersList = {}
 	for k, player in pairs(game.players) do
+		log(player.name)
 		if k ~= playerIndex then
-			playersList[k] = player.name
+			table.insert(playersList, player.name)
 		end
 	end
 
@@ -107,7 +109,11 @@ function GUI.updateOptionGUIMFTab(GUITable)
 	GAPI.addSubtitle(GUITable, "", flow, {"gui-description.MFOpt"})
 	GAPI.addLabel(GUITable, "", flow, {"gui-description.MFPAllowedPlayersLabel"}, nil, {"gui-description.MFPAllowedPlayersLabelTT"}, false, nil, _mfLabelType.yellowTitle)
 	local playersPermissionsFlow = GAPI.addFlow(GUITable, "", flow, "horizontal")
+	
+	log(playersList);
 	local addAllowedPlayerDD = GAPI.addDropDown(GUITable, "AllowedPlayersDD", playersPermissionsFlow, playersList, nil, true)
+	
+	log("A");
 	addAllowedPlayerDD.style.horizontally_stretchable = true
 	local addAllowedPlayerButton = GAPI.addSimpleButton(GUITable, "Opt.GUI.AddAllowedPlayer", playersPermissionsFlow, {"gui-description.MFOptAddButton"})
 	addAllowedPlayerButton.style.maximal_width = 75
