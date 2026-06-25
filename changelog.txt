@@ -1,31 +1,40 @@
 ---------------------------------------------------------------------------------------------------
+Version 0.14.5
+Date: 25/06/26
+  Changes:
+    - The recipe has been changed to make it more complicated quatron and energy Laser MK2 and MK3
+    - The recipe has been changed to make it more complicated quatron and energy cube MK2 and MK3
+    - The recipe has been changed to make it more complicated internal Energy and Quatron Cube
+    - The recipe Stone Brick
+    - The recipe Landfill
+---------------------------------------------------------------------------------------------------
 Version 0.14.4
-Date: 06/14/26
-  Bugfixes:
+Date: 14/06/26
+  Changes:
     - Fix error when opening Mobile Factory Options with multiple players
 ---------------------------------------------------------------------------------------------------
 Version 0.14.3
-Date: 05/23/26
+Date: 23/05/26
   Changes:
     - Add russian localization
 ---------------------------------------------------------------------------------------------------
 Version 0.14.2
-Date: 05/18/26
+Date: 18/05/26
   Changes:
     - Fix Deep Tank and Fluid Interactor errors
 ---------------------------------------------------------------------------------------------------
 Version 0.14.1
-Date: 05/12/26
+Date: 12/05/26
   Changes:
     - Fix Deep Storage and Matter Interactor Filters being lost on reload
 ---------------------------------------------------------------------------------------------------
 Version 0.14.0
-Date: 05/12/26
+Date: 12/05/26
   Changes:
     - Update Remote API to support Quality
 ---------------------------------------------------------------------------------------------------
 Version: 0.13.0
-Date: 05/11/26
+Date: 11/05/26
   Major Changes:
     - Changed MF Shield to operate off of Equipment Grid energy, it now charges at 100HP/s
     - Added Internal Battery Equipment that synchronizes with MF Internal Energy Cube
@@ -40,19 +49,19 @@ Date: 05/11/26
     - Fix Data Assembler
 ---------------------------------------------------------------------------------------------------
 Version: 0.12.7
-Date: 05/09/2026
+Date: 09/05/2026
   Bugfixes:
     - Fix Resources Collector animation issues
 ---------------------------------------------------------------------------------------------------
 Version: 0.12.6
-Date: 05/09/2026
+Date: 09/05/2026
   Changes:
     - Pollution now only exits the Mobile Factory through void tiles
   Bugfixes:
     - Fixed Mobile Factory Quatron Laser
 ---------------------------------------------------------------------------------------------------
 Version: 0.12.5
-Date: 05/09/2026
+Date: 09/05/2026
   Changes:
     - Filled Resource Catchers placed on a resource will now add to that resource if it is the same
     - Improve compatibility with multiple Earendel mods
@@ -64,7 +73,7 @@ Date: 05/09/2026
     - Fix Beam animations
 ---------------------------------------------------------------------------------------------------
 Version: 0.12.4
-Date: 05/07/2026
+Date: 07/05/2026
   Bugfixes:
     - Fixed Dimensional Fluid Pipes reaching pipeline max extents
     - Fixed EnergyCube energy transfer graphics
